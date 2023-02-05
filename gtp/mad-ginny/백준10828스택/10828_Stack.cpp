@@ -8,7 +8,7 @@ int size();
 int empty();
 int top();
 
-int stack[1000] = { 0, };
+int stack[10000] = { 0, };
 int index = -1;
 
 int main(void) {

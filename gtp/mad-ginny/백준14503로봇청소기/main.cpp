@@ -28,9 +28,10 @@ int main(void) {
     //청소한 칸 개수
     int cnt = 0;
 
-    int seek = 0;
-    int new_rx = rx; int new_ry = ry;
+    int seek;
+    int new_rx, new_ry;
     int back_rx, back_ry;
+    int check_d;
 
     while (true) {
 
@@ -44,17 +45,20 @@ int main(void) {
         // 탐색(try2)
         while (seek != 15) {
             // 왼쪽 방향에 있는 칸
-            d = (d + 3) % 4;  // 왼쪽 방향
+            check_d = (d + 3) % 4;  // 왼쪽 방향
 
-            if (d == 0) { new_rx = rx - 1; }
-            else if (d == 1) { new_ry = ry + 1; }
-            else if (d == 2) { new_rx = rx + 1; }
-            else { new_ry = rx - 1; }
+            new_rx = rx;
+            new_ry = ry;
+            if (check_d == 0) { new_rx = rx - 1; }
+            else if (check_d == 1) { new_ry = ry + 1; }
+            else if (check_d == 2) { new_rx = rx + 1; }
+            else { new_ry = ry - 1; }
 
+            d = check_d;
             if (room[new_rx][new_ry] == 0) {
                 break;
             }
-            seek |= (1 << d);
+            seek |= (1 << check_d);
         }
 
         if (seek == 15) {
