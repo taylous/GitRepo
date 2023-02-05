@@ -77,7 +77,7 @@ int main(void) {
 
     }
 
-    cout >> cnt >> endl;
+    cout << cnt << endl;
     return 0;
 
 }
