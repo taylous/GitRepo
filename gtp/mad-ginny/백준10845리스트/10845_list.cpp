@@ -18,7 +18,7 @@ public:
 
 };
 
-void push(int, int);
+void push(int);
 int pop();
 //int size();
 int empty();
@@ -44,7 +44,7 @@ int main(void) {
 
 		if (fun == "push") {
 			cin >> arg;
-			push(arg, s);
+			push(arg);
 			continue;
 		}
 		else if (fun == "pop") {
@@ -70,7 +70,7 @@ int main(void) {
 	return 0;
 }
 // push X : 정수 X를 큐에 넣는 연산이다.
-void push(int arg, int s) {
+void push(int arg) {
 	Node* node = new Node(arg);
 
 	if (s == 0) {
